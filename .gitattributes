@@ -1,0 +1,2 @@
+lotus filter=lfs diff=lfs merge=lfs -text
+lotus-bench filter=lfs diff=lfs merge=lfs -text

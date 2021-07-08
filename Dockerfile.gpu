@@ -1,0 +1,6 @@
+FROM nvidia/cuda:10.2-base
+RUN apt-get update &&  apt-get install git -y
+RUN git clone https://github.com/Zengdewei1/filecoin-node.git
+RUN export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/" 
+# 加速参数拉取
+RUN cd filecoin-node && chmod +x lotus lotus-bench && ./lotus params-fetch 32GiB
