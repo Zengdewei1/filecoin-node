@@ -1,5 +1,5 @@
 FROM nvidia/cuda:10.2-base
-RUN sed -i "s@archive.ubuntu.com@mirrors.aliyun.com@g" /etc/apt/sources.list
+# RUN sed -i "s@archive.ubuntu.com@mirrors.aliyun.com@g" /etc/apt/sources.list
 RUN apt-get update &&  apt-get install git -y
 RUN apt-get install git-lfs -y
 RUN ls
