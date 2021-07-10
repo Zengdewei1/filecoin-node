@@ -1,6 +1,12 @@
 FROM nvidia/cuda:10.2-base
 RUN apt-get update &&  apt-get install git -y
+RUN apt-get install git-lfs -y
+RUN ls
 RUN git clone https://github.com/Zengdewei1/filecoin-node.git
-RUN export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/" 
 # 加速参数拉取
-RUN cd filecoin-node && chmod +x lotus lotus-bench && ./lotus params-fetch 32GiB
+RUN ls
+RUN cd filecoin-node && git lfs pull && chmod +x lotus && chmod +x lotus-bench
+RUN apt-get install ocl-icd-opencl-dev  -y
+RUN apt-get install libhwloc-dev -y
+# RUN export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/" 
+RUN cd filecoin-node  && ./lotus fetch-params 32GiB
