@@ -10,4 +10,4 @@ RUN cd filecoin-node && git lfs pull && chmod +x lotus && chmod +x lotus-bench
 RUN apt-get install ocl-icd-opencl-dev  -y
 RUN apt-get install libhwloc-dev -y
 RUN export IPFS_GATEWAY="https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/" 
-RUN cd filecoin-node  && ./lotus fetch-params 32GiB
+# RUN cd filecoin-node  && ./lotus fetch-params 32GiB
