@@ -1,0 +1,7 @@
+version: 3
+services:
+    lotus:
+        image: gpu:withouttmp
+        volumes: 
+            - /var/tmp/filecoin-proof-parameters:/var/tmp/filecoin-proof-parameters
+        gpus: all
